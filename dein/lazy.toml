@@ -1,0 +1,23 @@
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+# insertで読み込む
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+on_i = 1
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+on_i = 1
+on_ft = ['py']
+
+[[plugins]]
+repo = 'wsdjeg/deoplete-clang2'
+hook_post_source = '''
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-6.0/lib/libclang-6.0.so.1'
+let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
+'''
+on_i = 1
+on_ft = ['c','cpp','cmake']
+depends = ['deoplete.nvim']
